@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/8d10aa5815.js" crossorigin="anonymous"></script>
+    <title>Nekoroid | Nendoroid Store Website</title>
+  </head>
+  <body class="bg-[#F6F7F6] text-xs md:text-sm w-full min-h-screen flex flex-col">
+    <!-- NAVBAR -->
+    <header id="my-header" class="fixed top-0 left-0 w-full h-16 md:h-20 z-30 md:mb-5 bg-white shadow-lg">
+      <!-- DESKTOP -->
+      <nav class="hidden lg:flex items-center justify-between gap-20 h-full w-full px-32">
+        <!-- Left -->
+        <div>
+          <a href="#" class="font-bold text-2xl text-[#FC4B03]">Nekoroid</a>
+        </div>
+        <!-- Mid -->
+        <div class="flex flex-1 gap-5 items-center">
+          <div class="flex gap-3 items-center justify-center w-full py-2 px-4 border-2 rounded-md">
+            <i class="fa-solid fa-magnifying-glass text-[#FC4B03]"></i>
+            <input type="text" placeholder="Search product..." class="w-full text-[13px] outline-none">
+          </div>
+          <i class="fa-solid text-lg fa-cart-shopping text-[#FC4B03] cursor-pointer"></i>
+          <i class="fa-solid text-lg fa-heart text-[#FC4B03] cursor-pointer"></i>
+        </div>
+        <!-- Right -->
+        <div class="flex items-center justify-between gap-3">
+          <a href="#" class="px-4 py-2 rounded-[5px] bg-[#FC4B03] text-white text-xs">Sign Up</a>
+          <a href="#" class="px-4 py-2 rounded-[5px] bg-[#FC4B03] text-white text-xs">Log In</a>
+        </div>
+      </nav>
+      <!-- MOBILE -->
+      <nav class="relative items-center justify-between h-full w-full gap-10 md:gap-20 px-6 md:px-8 mx-auto flex lg:hidden">
+        <!-- Left -->
+        <div class="flex gap-4 md:gap-5 items-center text-[#FC4B03]">
+          <i id="navbar-menu-open-btn" class="fa-solid fa-bars-staggered text-base md:text-lg cursor-pointer"></i>
+          <a href="#" class="font-bold text-base md:text-xl">Nekoroid</a>
+        </div>
+        <!-- Right -->
+        <div class="flex gap-4 md:gap-5 items-center text-[#FC4B03]">
+          <i class="fa-solid fa-cart-shopping text-base md:text-lg cursor-pointer"></i>
+          <i class="fa-solid fa-heart text-base md:text-lg cursor-pointer"></i>
+          <i id="search-btn" class="fa-solid fa-magnifying-glass text-base md:text-lg cursor-pointer"></i>
+        </div>
+        <!-- Navbar Menu -->
+        <div id="navbar-menu" class="fixed w-screen h-screen top-0 left-0 bg-white z-50 overflow-hidden hidden">
+          <div class="flex items-center gap-3 w-full p-5 border-b-2 font-semibold text-sm">
+            <i id="navbar-menu-close-btn" class="fa-solid fa-chevron-left cursor-pointer font-extrabold"></i>
+            <p>Account</p>
+          </div>
+          <div class="flex items-center gap-3 w-full p-5 border-b-2">
+            <i class="fa-regular fa-face-smile text-xl text-[#FC4B03]"></i>
+            <p>Firdig Alfalakhi</p>
+          </div>
+          <div class="group flex items-center gap-3 w-full p-5 cursor-pointer hover:bg-[#FC4B03] hover:text-white">
+            <i class="fa-solid fa-circle-user text-sm text-[#FC4B03] group-hover:text-white"></i>
+            <p>My Profile</p>
+          </div>
+          <div class="group flex items-center gap-3 w-full p-5 cursor-pointer hover:bg-[#FC4B03] hover:text-white">
+            <i class="fa-solid fa-clock-rotate-left text-sm text-[#FC4B03] group-hover:text-white"></i>
+            <p>Order History</p>
+          </div>
+          <div class="group flex items-center gap-3 w-full p-5 cursor-pointer hover:bg-[#FC4B03] hover:text-white border-b-2">
+            <i class="fa-solid fa-right-from-bracket text-sm text-[#FC4B03] group-hover:text-white"></i>
+            <p>Log Out</p>
+          </div>
+        </div>
+        <!-- Search Menu -->
+        <div id="search-bar" class="absolute w-[75vw] -bottom-[60px] md:-bottom-[75px] bg-white py-2 md:py-3 px-3 md:px-5 z-50 rounded-sm shadow-lg close-search">
+          <div class="flex gap-3 items-center justify-center w-full py-2 px-4 border-2 rounded-md">
+            <i class="fa-solid fa-magnifying-glass text-[#FC4B03]"></i>
+            <input type="text" placeholder="Search product..." class="w-full text-xs md:text-sm outline-none">
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="relative w-full px-6 md:px-8 lg:px-32 mt-20 md:mt-24 lg:mt-28 flex-1">
+      <!-- HOME - HERO -->
+      <!-- <section class="relative w-full h-[250px] sm:h-[300px] lg:h-[400px] text-white overflow-hidden"> -->
+        <!-- Carousel Button -->
+        <!-- <div class="absolute text-black top-3 md:top-6 right-3 md:right-6 z-10">
+          <button id="hero-prev-button" class="bg-white hover:bg-[#FC4B03] hover:text-white py-1 lg:py-2 px-2 md:px-3 lg:px-4 rounded-l-lg text-xs sm:text-sm md:text-base"><i class="fa-solid fa-chevron-left"></i></button>
+          <button id="hero-next-button" class="bg-white hover:bg-[#FC4B03] hover:text-white py-1 lg:py-2 px-2 md:px-3 lg:px-4 rounded-r-lg text-xs sm:text-sm md:text-base"><i class="fa-solid fa-chevron-right"></i></button>
+        </div> -->
+        <!-- Carousel Items -->
+        <!-- <div id="hero-carousel" class="flex w-full h-full" style=" -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;">
+          <div style="background-image: url('../assets/hero-2.jpg')" class="hero-carousel-item flex flex-col p-4 items-center justify-center min-w-full h-full gap-5 md:gap-10 bg-center bg-cover bg-no-repeat rounded-lg">
+            <h1 class="text-center">Discover adorable anime Nendoroids for sale!</h1>
+            <d gap-2imd:v class="flex gap-3">
+              <a href="#" class="flex gap-3 items-center justify-center bg-white hover:bg-[#FC4B03] text-black hover:text-white py-2 md:py-3 px-4 md:px-6 rounded-md">
+                <p>Shop Now</p>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </d>
+          </div>
+          <div style="background-image: url('../assets/hero-3.jpg')" class="hero-carousel-item flex flex-col p-4 items-center justify-center min-w-full h-full gap-5 md:gap-10 bg-center bg-cover bg-no-repeat rounded-lg">
+            <h1 class="text-center">Collect your favorite anime characters as Nendoroid figures!</h1>
+            <div class="flex gap-2 md:gap-3">
+              <a href="#" class="flex gap-3 items-center justify-center bg-white hover:bg-[#FC4B03] text-black hover:text-white py-2 md:py-3 px-4 md:px-6 rounded-md">
+                <p>Shop Now</p>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div style="background-image: url('../assets/hero-4.jpg')" class="hero-carousel-item flex flex-col p-4 items-center justify-center min-w-full h-full gap-5 md:gap-10 bg-center bg-cover bg-no-repeat rounded-lg">
+            <h1 class="text-center">Embrace the world of anime with our Nendoroid collection!</h1>
+            <div class="fle gap-2xmd: gap-3">
+              <a href="#" class="flex gap-3 items-center justify-center bg-white hover:bg-[#FC4B03] text-black hover:text-white py-2 md:py-3 px-4 md:px-6 rounded-md">
+                <p>Shop Now</p>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div style="background-image: url('../assets/hero-5.jpg')" class="hero-carousel-item flex flex-col p-4 items-center justify-center min-w-full h-full gap-5 md:gap-10 bg-center bg-cover bg-no-repeat rounded-lg">
+            <h1 class="text-center">Get your hands on cute and collectible anime Nendoroids!</h1>
+            <div class="fl gap-2emd:x gap-3">
+              <a href="#" class="flex gap-3 items-center justify-center bg-white hover:bg-[#FC4B03] text-black hover:text-white py-2 md:py-3 px-4 md:px-6 rounded-md">
+                <p>Shop Now</p>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div> -->
+      <!-- </section> -->
+
+      <!-- HOME - ADDS -->
+      <!-- <section class="w-full mt-5 md:mt-10 flex flex-col gap-5 sm:gap-10">
+        <div class="w-full flex flex-col sm:flex-row gap-3 md:gap-5 items-center justify-center sm:justify-between">
+          <div class="w-full flex-1 flex items-center justify-center sm:justify-normal pb-2 sm:pb-0 border-b-2 sm:border-b-0 sm:border-r-2 border-black">
+            <h5 class="max-w-[375px] sm:pr-5 text-center sm:text-left">We provide best customers experiences</h5>
+          </div>
+          <p class="text-gray-500 max-w-[375px] sm:w-[250px] md:w-[375px] lg:w-[440px] text-center sm:text-left">We ensure our customers have the best shopping experiences</p>
+        </div>
+        <div class="w-full grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
+          <div class="flex flex-col sm:gap-2 p-3 md:p-5 bg-white shadow-md rounded-md">
+            <i class="fa-solid fa-cubes text-sm sm:text-base lg:text-lg p-3 bg-[#FC4B03] text-white w-fit rounded-md mb-2 "></i>
+            <p class="font-bold">Original Products</p>
+            <p class="hidden sm:flex">We provide money back guarantee if the product are not original</p>
+          </div>
+          <div class="flex flex-col sm:gap-2 p-3 md:p-5 bg-white shadow-md rounded-md">
+            <i class="fa-solid fa-face-laugh-beam text-sm sm:text-base lg:text-lg p-3 bg-[#FC4B03] text-white w-fit rounded-md mb-2"></i>
+            <p class="font-bold">Satisfication Guarantee</p>
+            <p class="hidden sm:flex">Exchange the product you've purchased if it doesn't fit on you</p>
+          </div>
+          <div class="flex flex-col sm:gap-2 p-3 md:p-5 bg-white shadow-md rounded-md">
+            <i class="fa-solid fa-meteor text-sm sm:text-base lg:text-lg p-3 bg-[#FC4B03] text-white w-fit rounded-md mb-2"></i>
+            <p class="font-bold">New Arrival Everyday</p>
+            <p class="hidden sm:flex">We updates our collections almost everyday</p>
+          </div>
+          <div class="flex flex-col sm:gap-2 p-3 md:p-5 bg-white shadow-md rounded-md">
+            <i class="fa-solid fa-truck-fast text-sm sm:text-base lg:text-lg p-3 bg-[#FC4B03] text-white w-fit rounded-md mb-2"></i>
+            <p class="font-bold">Fast & Free Shipping</p>
+            <p class="hidden sm:flex">We offer fast and free shipping for our loyal customers</p>
+          </div>
+        </div>
+      </section> -->
+      
+      <!-- HOME - CATEGORIES -->
+      <!-- <section class="w-full mt-7 md:mt-10 flex flex-col gap-4 md:gap-7">
+        <h5>Categories</h5>
+        <div class="w-full h-[350px] lg:h-[250px] grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+          <div style="background-image: url('../assets/hero-2.jpg')" class="flex flex-col items-center justify-end w-full h-full p-3 lg:p-5 bg-center bg-cover bg-no-repeat rounded-lg">
+            <a href="#" class="flex gap-1 sm:gap-3 items-center justify-center bg-white hover:bg-[#FC4B03] text-black py-1 sm:py-2 lg:py-3 px-3 sm:px-4 lg:px-6 rounded-md hover:text-white">
+              <p class="line-clamp-2">Jujutsu Kaisen Nendoroid</p>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div style="background-image: url('../assets/hero-2.jpg')" class="flex flex-col items-center justify-end w-full h-full p-3 lg:p-5 bg-center bg-cover bg-no-repeat rounded-lg">
+            <a href="#" class="flex gap-1 sm:gap-3 items-center justify-center bg-white hover:bg-[#FC4B03] text-black py-1 sm:py-2 lg:py-3 px-3 sm:px-4 lg:px-6 rounded-md hover:text-white">
+              <p class="line-clamp-2">Jujutsu Kaisen Nendoroid</p>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div style="background-image: url('../assets/hero-2.jpg')" class="flex flex-col items-center justify-end w-full h-full p-3 lg:p-5 bg-center bg-cover bg-no-repeat rounded-lg">
+            <a href="#" class="flex gap-1 sm:gap-3 items-center justify-center bg-white hover:bg-[#FC4B03] text-black py-1 sm:py-2 lg:py-3 px-3 sm:px-4 lg:px-6 rounded-md hover:text-white">
+              <p class="line-clamp-2">Jujutsu Kaisen Nendoroid</p>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div style="background-image: url('../assets/hero-2.jpg')" class="flex flex-col items-center justify-end w-full h-full p-3 lg:p-5 bg-center bg-cover bg-no-repeat rounded-lg">
+            <a href="#" class="flex gap-1 sm:gap-3 items-center justify-center bg-white hover:bg-[#FC4B03] text-black py-1 sm:py-2 lg:py-3 px-3 sm:px-4 lg:px-6 rounded-md hover:text-white">
+              <p class="line-clamp-2">Jujutsu Kaisen Nendoroid</p>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section> -->
+      
+      <!-- HOME - FEATURED ITEMS -->
+      <!-- <section class="w-full mt-7 md:mt-10 flex flex-col gap-4 md:gap-7">
+        <h5>Featured Items</h4>
+        <div class="w-full grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-5 bg-white shadow-lg px-3 md:px-5 py-8 rounded-md">
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 cursor-pointer">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-full flex items-center justify-center">
+          <a href="#" class="py-3 px-6 rounded-md bg-[#FC4B03] text-white w-fit font-semibold">Click to show all items</a>
+        </div>
+      </section> -->
+    
+      <!-- DETAIL -->
+      <!-- <section class="w-full flex flex-col md:flex-row gap-4 md:gap-7 p-5 sm:p-10 shadow-lg bg-white">
+        <div class="flex-1 w-full h-fit flex justify-center">
+          <img src="../assets/item-1.jpg" alt="">
+        </div>
+        <div class="flex-1 w-full flex flex-col gap-2">
+          <h5 class="font-semibold">Jujutsu Kaisen - Yuji Itadori</h5>
+          <p class="text-gray-500 pb-1 lg:pb-3">By Good Smile Company</p>
+          <hr>
+          <h5 class="font-medium lg:pt-2 text-[#FC4B03]">Rp. 500.000</h5>
+          <p>Stock: 5</p>
+          <div class="flex items-center gap-5 md:gap-7 border-2 border-black py-[6px] md:py-2 px-4 w-fit rounded-md font-semibold"> 
+            <i class="fa-solid fa-minus"></i>
+            <p class="">0</p>
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="flex gap-2 sm:gap-3 pt-3 md:pt-5 pb-3 text-white">
+            <button class="py-3 sm:py-4 px-4 sm:px-6 lg:px-10 rounded-md bg-red-600 flex gap-2 items-center"><i class="fa-solid text-base md:text-lg fa-heart"></i>Wishlist</button>
+            <button class="py-3 sm:py-4 rounded-md bg-[#FC4B03] w-full">Add to Cart</button>
+          </div>
+          <hr>
+          <p class="pt-3">"I'm not gonna regret the way I live!"
+            From the currently airing anime series "Jujutsu Kaisen" comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!</p>
+        </div>
+      </section> -->
+      
+      <!-- CATALOG -->
+      <!-- <section class="w-full flex gap-5">
+        <div class="w-[250px] h-fit bg-white shadow-lg p-4 hidden lg:flex flex-col gap-3 rounded-md">
+          <p class="text-base font-semibold">Category</p>
+          <hr>
+          <div class="flex flex-col gap-3 pl-3">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+              <span class="text-gray-500">One Piece</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+              <span class="text-gray-500">Naruto</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+              <span class="text-gray-500">Jujutsu Kaisen</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+              <span class="text-gray-500">Genshin Impact</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+              <span class="text-gray-500">Nikke</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+              <span class="text-gray-500">Hunter x Hunter</span>
+            </label>         
+          </div>
+        </div>
+        <div class="flex-1 h-fit bg-white shadow-lg flex flex-col p-5 gap-3 rounded-md">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between">
+            <h5 class="font-medium">All Items</h5>
+            <p class="pb-3 text-gray-500 lg:hidden">Showing 1-20 of 100 items</p> -->
+            <!-- Desktop -->
+            <!-- <div class="hidden lg:flex gap-4 items-center justify-center">
+              <p>Sort By</p>
+              <div class="relative w-[220px] cursor-pointer group">
+                <div id="sort-by-btn" class="flex justify-between items-center py-2 px-4 border-2 rounded-md">
+                  <span id="sort-by-selected">Relevance</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <ul id="sort-by-menu" class="absolute flex-col bg-white border-2 rounded-md w-full cursor-pointer lg:top-[45px] left-0 hidden">
+                  <li class="p-3 hover:bg-[#FC4B03] hover:rounded-t-md">Relevance</li>
+                  <li class="p-3 hover:bg-[#FC4B03]">Latest</li>
+                  <li class="p-3 hover:bg-[#FC4B03]">Oldest</li>
+                  <li class="p-3 hover:bg-[#FC4B03]">Highest Price</li>
+                  <li class="p-3 hover:bg-[#FC4B03] hover:rounded-b-md">Lowest Price</li>
+                </ul>
+              </div>
+            </div> -->
+            <!-- Mobile -->
+            <!-- <div class="lg:hidden flex gap-3 items-center w-full text-white"> -->
+              <!-- Filter -->
+              <!-- <button id="filter-modal-open-btn" class="flex-[50%] flex gap-2 sm:gap-3 items-center justify-center py-3 bg-[#FC4B03] rounded-md">
+                <i class="fa-solid fa-filter text-base"></i>
+                Filters
+              </button>
+              <dialog id="filter-modal-menu" class="w-[250px] sm:w-[350px] md:w-[400px] h-fit bg-white shadow-lg p-4 rounded-md">
+                <div class="flex items-center justify-between pb-3">
+                  <p class="text-base font-semibold">Category</p>
+                  <button id="filter-modal-close-btn" class="flex gap-[6px] items-center justify-center py-1 px-3 bg-[#FC4B03] rounded-md text-[10px] text-white">
+                    <i class="fa-solid fa-x text-[8px]"></i>
+                    <p>Close</p>
+                  </button>
+                </div>
+                <hr>
+                <div class="flex flex-col gap-3 pt-3">
+                  <label class="flex items-center justify-between cursor-pointer">
+                    <span class="text-gray-500">One Piece</span>
+                    <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer">
+                    <span class="text-gray-500">Naruto</span>
+                    <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer">
+                    <span class="text-gray-500">Jujutsu Kaisen</span>
+                    <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer">
+                    <span class="text-gray-500">Genshin Impact</span>
+                    <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer">
+                    <span class="text-gray-500">Nikke</span>
+                    <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+                  </label>
+                  <label class="flex items-center justify-between cursor-pointer">
+                    <span class="text-gray-500">Hunter x Hunter</span>
+                    <input type="checkbox" class="appearance-none w-[14px] h-[14px] rounded-[3px] border-2 border-[#fc4a03c8] checked:bg-[#FC4B03] cursor-pointer">
+                  </label>         
+                </div>
+              </dialog> -->
+              <!-- Sort By -->
+              <!-- <button id="sortby-modal-open-btn" class="flex-[50%] flex gap-2 sm:gap-3 items-center justify-center py-3 bg-[#FC4B03] rounded-md">
+                <i class="fa-solid fa-arrow-down-wide-short text-base"></i>
+                Relevance
+              </button>
+              <dialog id="sortby-modal-menu" class="w-[250px] sm:w-[350px] md:w-[400px] h-fit bg-white shadow-lg p-4 rounded-md">
+                <div class="flex items-center justify-between pb-3">
+                  <p class="text-base font-semibold">Sort By</p>
+                  <button id="sortby-modal-close-btn" class="flex gap-[6px] items-center justify-center py-1 px-3 bg-[#FC4B03] rounded-md text-[10px] text-white">
+                    <i class="fa-solid fa-x text-[8px]"></i>
+                    <p>Close</p>
+                  </button>
+                </div>
+                <hr>
+                <ul id="sort-by-menu" class="bg-white cursor-pointer">
+                  <li class="p-3 hover:bg-[#FC4B03] hover:text-white">Relevance</li>
+                  <li class="p-3 hover:bg-[#FC4B03] hover:text-white">Latest</li>
+                  <li class="p-3 hover:bg-[#FC4B03] hover:text-white">Oldest</li>
+                  <li class="p-3 hover:bg-[#FC4B03] hover:text-white">Highest Price</li>
+                  <li class="p-3 hover:bg-[#FC4B03] hover:text-white">Lowest Price</li>
+                </ul>
+              </dialog>
+            </div>
+          </div>
+          <hr> -->
+          <!-- Items -->
+          <!-- <div class="w-full grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-3 pt-1 sm:pt-3">
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+            <div class="w-full flex flex-col gap-1 cursor-pointer">
+              <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+              <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+              <div class="flex flex-col gap-0">
+                <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+              </div>
+            </div>
+          </div> -->
+          <!-- Pagination -->
+          <!-- <div class="flex items-center justify-center mt-6 md:text-sm text-xs">
+            <div class="flex items-center justify-center gap-1 sm:gap-2 flex-wrap">
+              <button class="flex items-center justify-center p-3 sm:p-4 rounded-[4px] bg-[#FC4B03] text-white h-10 gap-2"><i class="fa-solid fa-chevron-left text-xs"></i> Prev</button>
+              <button class="flex items-center justify-center p-3 sm:p-4 rounded-[4px] bg-gray-200 hover:bg-gray-300 h-10">1</button>
+              <button class="flex items-center justify-center p-3 sm:p-4 rounded-[4px] bg-gray-200 hover:bg-gray-300 h-10">2</button>
+              <button class="flex items-center justify-center p-3 sm:p-4 rounded-[4px] bg-gray-200 hover:bg-gray-300 h-10">3</button>
+              <button class="flex items-center justify-center p-3 sm:p-4 rounded-[4px] bg-[#FC4B03] text-white h-10 gap-2">Next <i class="fa-solid fa-chevron-right text-xs"></i></button>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- SHOPPING CART -->
+      <!-- <section class="w-full flex flex-col lg:flex-row gap-4 lg:gap-5"> -->
+        <!-- Cart -->
+        <!-- <div class="flex-[70%] flex flex-col gap-2 shadow-lg bg-white rounded-md p-5 h-fit">
+          <h5 class="font-semibold">Shopping Cart</h5>
+          <hr> -->
+          <!-- Items -->
+          <!-- <div class="flex flex-col lg:gap-3 gap-5 pt-3 w-full">
+            <div class="flex border-b-2 lg:border-none pb-2"> -->
+              <!-- Left -->
+              <!-- <div class="w-full lg:flex-[70%] flex flex-col lg:flex-row gap-4">
+                <img src="../assets/item-1.jpg" alt="" class="max-w-[75px] lg:max-w-[150px] h-fit rounded-md">
+                <div class="flex flex-col gap-3 justify-between w-full">
+                  <div class="flex flex-col gap-1">
+                    <p>Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                    <p class="text-[#FC4B03]">Rp 500.000</p>
+                  </div>
+                  <div class="flex lg:hidden gap-4 items-center text-[10px] sm:text-xs py-1 px-3 border-2 w-fit rounded-md">
+                    <i class="fa-solid fa-minus"></i>
+                    <p class="text-xs sm:text-sm">0</p>
+                    <i class="fa-solid fa-plus"></i>
+                  </div> -->
+                  <!-- Desktop -->
+                  <!-- <div class="hidden lg:flex gap-2 text-xs">
+                    <button class="flex items-center justify-center gap-2 py-2 px-3 bg-red-600 text-white rounded-md">
+                      <i class="fa-solid fa-heart"></i>
+                      <p>Wishlist</p>
+                    </button>
+                    <button class="flex items-center justify-center gap-2 py-2 px-3 bg-[#FC4B03] text-white rounded-md">
+                      <i class="fa-solid fa-trash"></i>
+                      <p>Delete</p>
+                    </button>
+                  </div> -->
+                  <!-- Mobile -->
+                  <!-- <div class="flex lg:hidden justify-between lg:justify-normal">
+                    <div class="flex flex-col gap-1">
+                      <p class="text-xs text-gray-500">Subtotal</p>
+                      <p class="text-[#FC4B03] font-semibold">Rp. 1.000.000</p>
+                    </div>
+                    <div class="flex items-center justify-center gap-4 md:gap-5 text-base md:text-xl">
+                      <i class="fa-solid fa-heart"></i>
+                      <i class="fa-solid fa-trash"></i>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <!-- Right -->
+              <!-- <div class="hidden lg:flex-[30%] lg:flex gap-5 justify-end">
+                <div class="flex flex-col gap-1 items-center">
+                  <p class="text-gray-500">Qty</p>
+                  <div class="flex gap-4 items-center justify-center text-xs">
+                    <i class="fa-solid fa-minus"></i>
+                    <p class="text-sm">0</p>
+                    <i class="fa-solid fa-plus"></i>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <p class="text-gray-500">Subtotal</p>
+                  <p class="text-[#FC304B] font-semibold">Rp 10.000.000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <!-- Total Price -->
+        <!-- <div class="flex-[30%] flex flex-col gap-2 items-center justify-center shadow-lg bg-white rounded-md p-4 h-fit">
+          <p>Total Price</p>
+          <h5 class="text-[#FC304B] font-semibold">Rp 10.000.000</h5>
+          <a href="#" class="w-full py-3 bg-[#FC4B03] flex items-center justify-center text-white text-xs rounded-md">Checkout</a>
+          <hr class="w-full">
+          <p class="text-gray-500 text-xs">Just one more step to complete the payment of your items</p>
+        </div>
+      </section> -->
+
+      <!-- WISHLIST -->
+      <!-- <section class="w-full flex flex-col gap-2 lg:gap-3 p-5 sm:p-10 shadow-lg bg-white">
+        <h5>My Wishlist</h5>
+        <hr>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 pt-3">
+          <div class="w-full flex flex-col gap-1 border-2 p-3 rounded-md">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+            <div class="flex gap-[5px] pt-2 text-[10px] sm:text-xs">
+              <button class="flex-[90%] flex items-center justify-center gap-2 py-2 rounded-md bg-[#FC4B03] text-white">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Add to Cart</p>
+              </button>
+              <i class="fa-solid fa-trash flex-[10%] p-3 rounded-md bg-red-500 text-white cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 border-2 p-3 rounded-md">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+            <div class="flex gap-[5px] pt-2 text-[10px] sm:text-xs">
+              <button class="flex-[90%] flex items-center justify-center gap-2 py-2 rounded-md bg-[#FC4B03] text-white">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Add to Cart</p>
+              </button>
+              <i class="fa-solid fa-trash flex-[10%] p-3 rounded-md bg-red-500 text-white cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 border-2 p-3 rounded-md">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+            <div class="flex gap-[5px] pt-2 text-[10px] sm:text-xs">
+              <button class="flex-[90%] flex items-center justify-center gap-2 py-2 rounded-md bg-[#FC4B03] text-white">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Add to Cart</p>
+              </button>
+              <i class="fa-solid fa-trash flex-[10%] p-3 rounded-md bg-red-500 text-white cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 border-2 p-3 rounded-md">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+            <div class="flex gap-[5px] pt-2 text-[10px] sm:text-xs">
+              <button class="flex-[90%] flex items-center justify-center gap-2 py-2 rounded-md bg-[#FC4B03] text-white">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Add to Cart</p>
+              </button>
+              <i class="fa-solid fa-trash flex-[10%] p-3 rounded-md bg-red-500 text-white cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 border-2 p-3 rounded-md">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+            <div class="flex gap-[5px] pt-2 text-[10px] sm:text-xs">
+              <button class="flex-[90%] flex items-center justify-center gap-2 py-2 rounded-md bg-[#FC4B03] text-white">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Add to Cart</p>
+              </button>
+              <i class="fa-solid fa-trash flex-[10%] p-3 rounded-md bg-red-500 text-white cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="w-full flex flex-col gap-1 border-2 p-3 rounded-md">
+            <img src="../assets/item-1.jpg" alt="" class="w-full object-cover object-center rounded-md">
+            <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">Jujutsu Kaisen</p>
+            <div class="flex flex-col gap-0">
+              <p class="font-bold line-clamp-2">Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+              <p class="text-xs md:text-sm text-[#FC4B03] font-medium">Rp. 500.000</p>
+            </div>
+            <div class="flex gap-[5px] pt-2 text-[10px] sm:text-xs">
+              <button class="flex-[90%] flex items-center justify-center gap-2 py-2 rounded-md bg-[#FC4B03] text-white">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Add to Cart</p>
+              </button>
+              <i class="fa-solid fa-trash flex-[10%] p-3 rounded-md bg-red-500 text-white cursor-pointer"></i>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- ORDER HISTORY -->
+      <section class="w-full flex flex-col gap-2 lg:gap-3 p-5 sm:p-10 shadow-lg bg-white">
+        <h5>Order History</h5>
+        <hr>
+        <div class="flex flex-col lg:gap-3 gap-5 pt-3 w-full">
+          <div class="flex border-b-2 lg:border-none pb-2">
+            <!-- Left -->
+            <div class="w-full lg:flex-[70%] flex flex-col lg:flex-row gap-4">
+              <img src="../assets/item-1.jpg" alt="" class="max-w-[90px] h-fit rounded-md">
+              <div class="flex flex-col gap-3 justify-between w-full">
+                <div class="flex flex-col gap-1">
+                  <p>Nendoroid Jujutsu Kaisen - Yuji Itadori</p>
+                  <p class="text-xs text-gray-500">+3 another products</p>
+                  <p class="text-xs text-[#FC4B03]">Date: 28 August 2023</p>
+                </div>
+                <!-- Mobile -->
+                <div class="flex lg:hidden justify-between lg:justify-normal">
+                  <div class="flex flex-col gap-1">
+                    <p class="text-xs text-gray-500">Total</p>
+                    <p class="text-[#FC4B03] font-semibold">Rp. 1.000.000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right -->
+            <div class="hidden lg:flex-[30%] lg:flex gap-5 justify-end">
+              <div class="flex flex-col gap-1">
+                <p class="text-gray-500">Total</p>
+                <p class="text-[#FC304B] font-semibold">Rp 10.000.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ! FOOTER -->
+    <footer class="mt-16 w-full h-fit z-20 bg-white font-semibold shadow-2xl">
+      <!-- DESKTOP -->
+      <div class="hidden flex-row px-8 lg:px-32 items-center justify-center py-8 md:flex">
+        <div class="flex items-center justify-start flex-1 gap-5 md:text-sm text-xs">
+          <a href="#">About</a>
+          <a href="#" class="text-center">Privacy Policy</a>
+          <a href="#" class="text-center">Terms of Service</a>
+        </div>
+        <div class="flex-1 flex items-center justify-center">
+          <a href="#" class="text-center text-xl text-[#FC4B03] font-bold">Nekoroid</a>
+        </div>
+        <div class="flex flex-1 items-center justify-end gap-5">
+          <p class="text-center">Contact Us</p>
+          <i class="fa-brands fa-whatsapp md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i>
+          <i class="fa-solid fa-envelope md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i>
+          <i class="fa-brands fa-linkedin md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i>
+          <i class="fa-brands fa-instagram md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i>
+        </div>
+      </div>
+      <!-- MOBILE -->
+      <div class="flex flex-col px-6 md:px-8 py-4 md:hidden md:text-base text-sm gap-4">
+        <div class="flex-1 flex items-center">
+          <a href="#" class="text-center text-base text-[#FC4B03] font-bold">Nekoroid</a>
+        </div>
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <a href="#">About</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <div class="flex flex-1 items-center gap-3 sm:gap-5 text-[#FC4B03]">
+            <i class="fa-brands fa-whatsapp text-lg cursor-pointer"></i>
+            <i class="fa-solid fa-envelope text-lg cursor-pointer"></i>
+            <i class="fa-brands fa-linkedin text-lg cursor-pointer"></i>
+            <i class="fa-brands fa-instagram text-lg cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+      <hr class="border-gray-300 mx-6 md:mx-8 lg:mx-32" />
+      <p class="pt-3 md:pt-5 pb-4 md:pb-5 text-center text-zinc-500 font-normal lg:text-sm text-xs">
+        © 2023 Nekoroid. All rights reserved.
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
