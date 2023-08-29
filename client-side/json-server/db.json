@@ -1,0 +1,14 @@
+{
+  "items": [
+    { "id": 1, "name": "Nendoroid Jujutsu Kaisen - Yuji Itadori", "category": "json-server", "price": 500000 },
+    { "id": 2, "name": "Nendoroid Demon Slayer - Tanjiro Kamado", "category": "anime", "price": 550000 },
+    { "id": 3, "name": "Nendoroid My Hero Academia - Izuku Midoriya", "category": "anime", "price": 480000 },
+    { "id": 4, "name": "Nendoroid Pokemon - Pikachu", "category": "gaming", "price": 420000 },
+    { "id": 5, "name": "Nendoroid Marvel - Iron Man", "category": "superheroes", "price": 600000 },
+    { "id": 6, "name": "Nendoroid The Legend of Zelda - Link", "category": "gaming", "price": 530000 },
+    { "id": 7, "name": "Nendoroid Harry Potter - Hermione Granger", "category": "fantasy", "price": 480000 },
+    { "id": 8, "name": "Nendoroid Disney - Mickey Mouse", "category": "animation", "price": 450000 },
+    { "id": 9, "name": "Nendoroid One Piece - Monkey D. Luffy", "category": "anime", "price": 520000 },
+    { "id": 10, "name": "Nendoroid Star Wars - Darth Vader", "category": "sci-fi", "price": 580000 }
+  ]
+}

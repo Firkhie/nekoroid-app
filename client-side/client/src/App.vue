@@ -1,12 +1,17 @@
-<script setup>
-import { RouterView } from 'vue-router'
-</script>
-
 <template>
-  <h1 class="text-3xl font-bold underline text-yellow-500">Hello world!</h1>
-  <p>Test</p>
-
-  <!-- <RouterView /> -->
+  <Navbar />
+  <RouterView />
+  <Footer />
 </template>
+
+<script>
+import { RouterView } from 'vue-router'
+import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
+
+export default {
+  components: { Navbar, Footer }
+}
+</script>
 
 <style scoped></style>
