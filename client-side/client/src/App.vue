@@ -1,7 +1,7 @@
 <template>
-  <Navbar />
+  <Navbar v-if="!isLoginRegister"/>
   <RouterView />
-  <Footer />
+  <Footer v-if="!isLoginRegister"/>
 </template>
 
 <script>
@@ -10,7 +10,12 @@ import Navbar from './components/Navbar.vue';
 import Footer from './components/Footer.vue';
 
 export default {
-  components: { Navbar, Footer }
+  components: { Navbar, Footer },
+  computed: {
+    isLoginRegister() {
+      return this.$route.name === 'login' || this.$route.name === 'register' 
+    }
+  }
 }
 </script>
 

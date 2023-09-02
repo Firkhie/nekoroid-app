@@ -1,14 +1,104 @@
 {
   "items": [
-    { "id": 1, "name": "Nendoroid Jujutsu Kaisen - Yuji Itadori", "category": "json-server", "price": 500000 },
-    { "id": 2, "name": "Nendoroid Demon Slayer - Tanjiro Kamado", "category": "anime", "price": 550000 },
-    { "id": 3, "name": "Nendoroid My Hero Academia - Izuku Midoriya", "category": "anime", "price": 480000 },
-    { "id": 4, "name": "Nendoroid Pokemon - Pikachu", "category": "gaming", "price": 420000 },
-    { "id": 5, "name": "Nendoroid Marvel - Iron Man", "category": "superheroes", "price": 600000 },
-    { "id": 6, "name": "Nendoroid The Legend of Zelda - Link", "category": "gaming", "price": 530000 },
-    { "id": 7, "name": "Nendoroid Harry Potter - Hermione Granger", "category": "fantasy", "price": 480000 },
-    { "id": 8, "name": "Nendoroid Disney - Mickey Mouse", "category": "animation", "price": 450000 },
-    { "id": 9, "name": "Nendoroid One Piece - Monkey D. Luffy", "category": "anime", "price": 520000 },
-    { "id": 10, "name": "Nendoroid Star Wars - Darth Vader", "category": "sci-fi", "price": 580000 }
+    {
+      "id": 1,
+      "name": "Nendoroid Jujutsu Kaisen - Yuji Itadori",
+      "category": "Anime",
+      "price": 500000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    },
+    {
+      "id": 2,
+      "name": "Nendoroid Demon Slayer - Tanjiro Kamado",
+      "category": "Anime",
+      "price": 550000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    },
+    {
+      "id": 3,
+      "name": "Nendoroid My Hero Academia - Izuku Midoriya",
+      "category": "Anime",
+      "price": 480000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    },
+    {
+      "id": 4,
+      "name": "Nendoroid Pokemon - Pikachu",
+      "category": "Gaming",
+      "price": 420000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    },
+    {
+      "id": 5,
+      "name": "Nendoroid Marvel - Iron Man",
+      "category": "Superheroes",
+      "price": 60000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    },
+    {
+      "id": 6,
+      "name": "Nendoroid The Legend of Zelda - Link",
+      "category": "Gaming",
+      "price": 530000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    },
+    {
+      "id": 7,
+      "name": "Nendoroid Harry Potter - Hermione Granger",
+      "category": "Fantasy",
+      "price": 480000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    },
+    {
+      "id": 8,
+      "name": "Nendoroid Disney - Mickey Mouse",
+      "category": "Animation",
+      "price": 450000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    },
+    {
+      "id": 9,
+      "name": "Nendoroid One Piece - Monkey D. Luffy",
+      "category": "Anime",
+      "price": 520000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    },
+    {
+      "id": 10,
+      "name": "Nendoroid Star Wars - Darth Vader",
+      "category": "Sci-fi",
+      "price": 580000,
+      "image": "https://cdn.kyou.id/items/182857-nendoroid-hitori-gotoh-bocchi-the-rock.jpg.webp",
+      "stock": 5,
+      "company": "Good Smile Company",
+      "description": "I'm not gonna regret the way I live! From the currently airing anime series Jujutsu Kaisen comes a Nendoroid of the main character Yuji Itadori! He comes with three face plates including a standard expression, a combat expression and a smiling expression! Optional parts include the finger of the Double-Faced Specter and effect parts for recreating combat sequences. Be sure to add him to your collection!"
+    }
   ]
 }

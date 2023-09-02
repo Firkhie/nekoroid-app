@@ -3,25 +3,25 @@
     <!-- DESKTOP -->
     <div class="hidden flex-row px-8 lg:px-32 items-center justify-center py-8 md:flex">
       <div class="flex items-center justify-start flex-1 gap-5 md:text-sm text-xs">
-        <a href="#">About</a>
-        <a href="#" class="text-center">Privacy Policy</a>
-        <a href="#" class="text-center">Terms of Service</a>
+        <router-link to="/about">About</router-link>
+        <a class="text-center">Privacy Policy</a>
+        <a class="text-center">Terms of Service</a>
       </div>
       <div class="flex-1 flex items-center justify-center">
-        <a href="#" class="text-center text-xl text-[#FC4B03] font-bold">Nekoroid</a>
+        <router-link to="/"><p class="text-center text-xl text-[#FC4B03] font-bold">Nekoroid</p></router-link>
       </div>
       <div class="flex flex-1 items-center justify-end gap-5">
         <p class="text-center">Contact Us</p>
-        <i class="fa-brands fa-whatsapp md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i>
-        <i class="fa-solid fa-envelope md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i>
-        <i class="fa-brands fa-linkedin md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i>
-        <i class="fa-brands fa-instagram md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i>
+        <a href="https://wa.me/083834572348" target="_blank"><i class="fa-brands fa-whatsapp md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i></a>
+        <a href="mailto:alfalakhie@gmail.com" target="_blank"><i class="fa-solid fa-envelope md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i></a>
+        <a href="https://www.linkedin.com/in/firdigalfalakhi/" target="_blank"><i class="fa-brands fa-linkedin md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i></a>
+        <a href="https://github.com/Firkhie" target="_blank"><i class="fa-brands fa-github md:text-2xl text-xl cursor-pointer text-[#FC4B03]"></i></a>
       </div>
     </div>
     <!-- MOBILE -->
     <div class="flex flex-col px-6 md:px-8 py-4 md:hidden md:text-base text-sm gap-4">
       <div class="flex-1 flex items-center">
-        <a href="#" class="text-center text-base text-[#FC4B03] font-bold">Nekoroid</a>
+        <a class="text-center text-base text-[#FC4B03] font-bold">Nekoroid</a>
       </div>
       <div class="grid grid-cols-2 gap-3 text-xs">
         <a href="#">About</a>

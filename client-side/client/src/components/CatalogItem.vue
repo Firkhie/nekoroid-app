@@ -1,5 +1,5 @@
 <template>
-  <div v-for="(item, index) in featuredItems" :key="index" class="w-full flex flex-col gap-1 cursor-pointer">
+  <div v-for="(item, index) in catalogItems" :key="index" class="w-full flex flex-col gap-1 cursor-pointer">
     <img :src="item.image" alt="" class="w-full object-cover object-center rounded-md">
     <p class="px-4 bg-gray-200 w-fit rounded-md text-xs mt-1 line-clamp-1">{{ item.category }}</p>
     <div class="flex flex-col gap-0">
@@ -15,14 +15,14 @@ import { mapActions } from 'pinia'
 import { useCounterStore } from '../stores/counter'
 
 export default {
-  name: 'HomeFeature',
+  name: 'CatalogItem',
   computed: {
-    ...mapState(useCounterStore, ['featuredItems'])
+    ...mapState(useCounterStore, ['catalogItems'])
   },
   methods: {
-    ...mapActions(useCounterStore, ['fetchFeaturedItems']),
+    ...mapActions(useCounterStore, ['fetchCatalogItems']),
     fetchData() {
-      this.fetchFeaturedItems()
+      this.fetchCatalogItems()
     }
   },
   created() {

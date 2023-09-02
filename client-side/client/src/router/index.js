@@ -7,6 +7,7 @@ import CatalogPage from '../views/CatalogPage.vue'
 import CartPage from '../views/CartPage.vue'
 import WishlistPage from '../views/WishlistPage.vue'
 import HistoryPage from '../views/HistoryPage.vue'
+import AboutPage from '../views/AboutPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,7 +33,7 @@ const router = createRouter({
       component: DetailPage
     },
     {
-      path: '/',
+      path: '/catalog',
       name: 'catalog',
       component: CatalogPage
     },
@@ -50,6 +51,11 @@ const router = createRouter({
       path: '/history',
       name: 'history',
       component: HistoryPage
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutPage
     },
   ]
 })

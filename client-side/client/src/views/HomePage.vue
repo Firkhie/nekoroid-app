@@ -50,7 +50,7 @@
         <HomeFeature />
       </div>
       <div class="w-full flex items-center justify-center">
-        <a href="#" class="py-3 px-6 rounded-md bg-[#FC4B03] text-white w-fit font-semibold">Click to show all items</a>
+        <router-link to="/catalog" class="py-3 px-6 rounded-md bg-[#FC4B03] text-white w-fit font-semibold">Click to show all items</router-link>
       </div>
     </section>
   </main>
