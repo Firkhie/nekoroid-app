@@ -10,7 +10,7 @@ async function authentication(req, res, next) {
     if (!user) throw { name: 'InvalidToken' }
     req.user = {
       userId: user.id,
-      username: user.username
+      fullName: user.fullName
     }
     next() 
   } catch (err) {

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+  h1 {
+    @apply lg:text-6xl md:text-3xl text-2xl font-medium;
+  }
+  h3 {
+    @apply lg:text-4xl md:text-2xl text-xl font-bold;
+  }
+  h4 {
+    @apply lg:text-3xl md:text-2xl text-lg font-bold;
+  }
+  h5 {
+    @apply lg:text-2xl md:text-xl text-base font-bold;
+  }
+  h6 {
+    @apply lg:text-xl  md:text-xl text-sm font-bold;
+  }
+}

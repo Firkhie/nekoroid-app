@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/80994f58a8.js" crossorigin="anonymous"></script>
+    <title>Nekoroid | Nendoroid Management System</title>
+  </head>
+  <body class="bg-[#F6F7F6] flex flex-col lg:flex-row text-xs lg:text-sm">
+    <!-- SIDEBAR -->
+    <header class="relative w-full lg:w-[230px] xl:w-[250px] h-16 lg:min-h-screen">
+      <!-- Desktop -->
+      <div class="w-full h-full bg-white hidden lg:flex flex-col p-6 shadow-lg">
+        <h5 class="text-[#FC4B03] mb-4">Nekoroid</h5>
+        <hr>
+        <div class="flex flex-col gap-1 mt-4">
+          <a href="#" class="flex gap-3 items-center p-4 hover:bg-[#FC4B03] hover:text-white rounded-md">
+            <i class="fa-solid fa-house"></i>
+            <p>Dashboard</p>
+          </a>
+          <a href="#" class="flex gap-3 items-center p-4 hover:bg-[#FC4B03] hover:text-white rounded-md">
+            <i class="fa-solid fa-box"></i>
+            <p>Categories</p>
+          </a>
+          <a href="#" class="flex gap-3 items-center p-4 hover:bg-[#FC4B03] hover:text-white rounded-md">
+            <i class="fa-solid fa-industry"></i>
+            <p>Manufacturers</p>
+          </a>
+        </div>
+      </div>
+      <!-- Mobile -->
+      <div class="flex lg:hidden items-center justify-between bg-white shadow-lg p-5">
+        <h5 class="text-[#FC4B03]">Nekoroid</h5>
+        <i class="fa-solid fa-bars text-lg text-[#FC4B03]"></i>
+      </div>
+      <div class="absolute top-16 left-0 w-full h-fit lg:hidden flex flex-col items-center justify-center font-medium z-20 bg-white border-t-2">
+        <a href="#" class="p-4 hover:bg-[#FC4B03] w-full text-center">Dashboard</a>
+        <a href="#" class="p-4 hover:bg-[#FC4B03] w-full text-center">Categories</a>
+        <a href="#" class="p-4 hover:bg-[#FC4B03] w-full text-center">Manufacturers</a>
+        <a href="#" class="p-4 hover:bg-[#FC4B03] w-full text-center">Logout</a>
+      </div>
+    </header>
+    <main class="relative w-full lg:w-[calc(100%-230px)] xl:w-[calc(100%-250px)] min-h-screen flex flex-col p-6 gap-7">
+      <div class="hidden lg:flex items-center justify-between">
+        <h6>Dashboard</h6>
+        <i class="fa-solid fa-user p-2 bg-black text-white text-xs"></i>
+      </div>
+      <div class="absolute top-16 right-6 hidden lg:flex flex-col gap-1 items-center justify-center py-3 px-10 bg-white rounded-md shadow-lg">
+        <p>Welcome, User1</p>
+        <button class="py-1 px-4 w-fit rounded-md bg-[#FC4B03] text-white text-[13px]">Logout</button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 sm:gap-3 xl:gap-5">
+        <div class="flex gap-4 items-center p-6 bg-white rounded-md shadow-lg">
+          <i class="fa-solid fa-house p-3 bg-[#FC4B03] text-white text-lg rounded-md"></i>
+          <div class="flex flex-col">
+            <p class="font-semibold">4</p>
+            <p>Items</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-center p-6 bg-white rounded-md shadow-lg">
+          <i class="fa-solid fa-house p-3 bg-[#FC4B03] text-white text-lg rounded-md"></i>
+          <div class="flex flex-col">
+            <p class="font-semibold">4</p>
+            <p>Items</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-center p-6 bg-white rounded-md shadow-lg">
+          <i class="fa-solid fa-house p-3 bg-[#FC4B03] text-white text-lg rounded-md"></i>
+          <div class="flex flex-col">
+            <p class="font-semibold">4</p>
+            <p>Items</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-center p-6 bg-white rounded-md shadow-lg">
+          <i class="fa-solid fa-house p-3 bg-[#FC4B03] text-white text-lg rounded-md"></i>
+          <div class="flex flex-col">
+            <p class="font-semibold">4</p>
+            <p>Items</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col bg-white rounded-md shadow-lg p-6">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-base md:text-lg font-semibold">Item List</p>
+          <button class="flex items-center justify-center rounded-md gap-2 px-4 py-2 bg-[#FC4B03] text-white text-xs md:text-sm">
+            <i class="fa-solid fa-plus"></i>
+            <p>New Item</p>
+          </button>
+        </div>
+        <hr>
+        <div class="flex flex-col">
+          <div class="overflow-x-auto">
+            <div class="inline-block min-w-full">
+              <div class="overflow-hidden">
+                <table class="min-w-full text-left text-xs lg:text-sm">
+                  <thead class="border-b font-medium dark:border-neutral-500">
+                    <tr>
+                      <th scope="col" class="px-6 py-4">#</th>
+                      <th scope="col" class="px-6 py-4">Name</th>
+                      <th scope="col" class="px-6 py-4">Price</th>
+                      <th scope="col" class="px-6 py-4">Image URL</th>
+                      <th scope="col" class="px-6 py-4">Stock</th>
+                      <th scope="col" class="px-6 py-4">Category</th>
+                      <th scope="col" class="px-6 py-4">Manufacturer</th>
+                      <th scope="col" class="px-6 py-4">Description
+                  </thead>
+                  <tbody>
+                    <tr class="border-b dark:border-neutral-500">
+                      <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
+                      <td class="whitespace-nowrap px-6 py-4 overflow-hidden overflow-ellipsis max-w-[300px]">LookUp / Rukappu Figure Gojo Satoru - Jujutsu Kaisen (11cm)</td>
+                      <td class="whitespace-nowrap px-6 py-4">680,000</td>
+                      <td class="whitespace-nowrap px-6 py-4 overflow-hidden overflow-ellipsis max-w-[300px]">https://cdn.kyou.id/items/79983-lookup-rukappu-figure-gojo-satoru-jujutsu-kaisen-11cm.jpg.webp</td>
+                      <td class="whitespace-nowrap px-6 py-4">99</td>
+                      <td class="whitespace-nowrap px-6 py-4">Jujutsu Kaisen</td>
+                      <td class="whitespace-nowrap px-6 py-4">MegaHouse</td>
+                      <td class="whitespace-nowrap px-6 py-4 overflow-hidden overflow-ellipsis max-w-[300px]">“Don't call me by my last name.”
+                        From the anime series "Jujutsu Kaisen" comes a Nendoroid of Maki Zenin! She comes with three face plates including a standard expression, a combat expression and a sullen expression.
+                        
+                        Optional parts include her polearm, her kunai, her weapon “Playful Cloud” and a crushed can. Enjoy creating all kinds of scenes from the series in Nendoroid form. Be sure to add her to your collection and display her with other Nendoroids from "Jujutsu Kaisen"!</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

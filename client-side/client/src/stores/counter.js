@@ -14,7 +14,7 @@ export const useCounterStore = defineStore('counter', {
   actions: {
     async fetchFeaturedItems() {
       try {
-        let items = await axios.get(`${this.baseUrl}/items`)
+        let items = await axios.get(`${this.baseUrl}/item`)
         this.featuredItems = items.data
       } catch (err) {
         console.log(err)
@@ -22,7 +22,7 @@ export const useCounterStore = defineStore('counter', {
     },
     async fetchCatalogItems() {
       try {
-        let items = await axios.get(`${this.baseUrl}/items`)
+        let items = await axios.get(`${this.baseUrl}/item`)
         this.catalogItems = items.data
       } catch (err) {
         console.log(err)
@@ -30,7 +30,7 @@ export const useCounterStore = defineStore('counter', {
     },
     async fetchDetailItem() {
       try {
-        let item = await axios.get(`${this.baseUrl}/items/1`)
+        let item = await axios.get(`${this.baseUrl}/item/1`)
         this.detailItem = item.data
       } catch (err) {
         console.log(err)
